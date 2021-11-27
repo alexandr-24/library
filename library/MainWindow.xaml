@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:library"
         mc:Ignorable="d"
-        Title="Библиотека" Height="500" Width="1000">
-    <Grid Background="#FFF5F6FA">
+        Title="Библиотека" Height="500" Width="1000" MinHeight="500" MinWidth="1000">
+    <Grid Background="#F1B635">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
@@ -21,14 +21,14 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="Home_Button" Content="Главная" Grid.Row="0" Style="{StaticResource isActiveButton}"/>
-        <Button x:Name="Author_Button" Content="Авторы" Grid.Row="1"/>
-        <Button x:Name="Book_Button" Content="Книги" Grid.Row="2"/>
-        <Button x:Name="Reader_Button" Content="Читатели" Grid.Row="3"/>
-        <Button x:Name="Subscription_Button" Content="Абонименты" Grid.Row="4"/>
-        <Button x:Name="Fine_Button" Content="Штрафы" Grid.Row="5"/>
+        <Button x:Name="Home_Button" Content="Главная" Grid.Row="0" Style="{StaticResource isActiveButton}" Click="Home_Button_Click"/>
+        <Button x:Name="Author_Button" Content="Авторы" Grid.Row="1" Click="Author_Button_Click" Style="{StaticResource notActiveButton}"/>
+        <Button x:Name="Book_Button" Content="Книги" Grid.Row="2" Style="{StaticResource notActiveButton}" Click="Book_Button_Click"/>
+        <Button x:Name="Reader_Button" Content="Читатели" Grid.Row="3" Style="{StaticResource notActiveButton}"/>
+        <Button x:Name="Subscription_Button" Content="Абонименты" Grid.Row="4" Style="{StaticResource notActiveButton}"/>
+        <Button x:Name="Fine_Button" Content="Штрафы" Grid.Row="5" Style="{StaticResource notActiveButton}"/>
 
 
-        <Frame x:Name="MainFrame" Grid.Column="1" Grid.RowSpan="7" Background="White"/>
+        <Frame x:Name="MainFrame" Grid.Column="1" Grid.RowSpan="7" Background="#EBCD86" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -1,0 +1,44 @@
+﻿<Page x:Class="library.pages.authors.Add_Edit_AuthorsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:library.pages.authors"
+      mc:Ignorable="d" 
+      d:DesignHeight="469" d:DesignWidth="792"
+      Title="Add_Edit_AuthorsPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Фамилия:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Имя:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Отчетсво:" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Дата рождения:" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Национальность:" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+        <TextBox x:Name="Surname_TB" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Surname}"/>
+        <TextBox x:Name="Name_TB" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Name}"/>
+        <TextBox x:Name="MiddleName_TB" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Middle_name}"/>
+        <DatePicker x:Name="Birthday_DP" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" SelectedDate="{Binding Birthday, StringFormat='dd.MM.yyyy'}"/>
+        <TextBox x:Name="Nationality_TB" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Nationality}"/>
+
+        <Button x:Name="Save_Button" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Сохранить" Style="{StaticResource controlButton}" Click="Save_Button_Click"/>
+        <Button x:Name="Back_Button" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Назад" Style="{StaticResource controlButton}" Click="Back_Button_Click"/>
+    </Grid>
+</Page>
