@@ -32,7 +32,7 @@
         <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Кол-во страниц:" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Издание:" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
-        <ComboBox x:Name="Author_TB" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,0">
+        <ComboBox x:Name="Author_TB" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" SelectedItem="{Binding Author}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
@@ -47,12 +47,12 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox x:Name="Name_TB" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
-        <TextBox x:Name="Year_TB" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
-        <TextBox x:Name="Pages_DP" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
-        <TextBox x:Name="Publisher_TB" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
+        <TextBox x:Name="Name_TB" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Name}"/>
+        <TextBox x:Name="Year_TB" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Year_of_publishing}"/>
+        <TextBox x:Name="Pages_DP" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Number_of_pages}"/>
+        <TextBox x:Name="Publisher_TB" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Text="{Binding Publisher}"/>
 
-        <Button x:Name="Save_Button" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Сохранить" Style="{StaticResource controlButton}"/>
-        <Button x:Name="Back_Button" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Назад" Style="{StaticResource controlButton}"/>
+        <Button x:Name="Save_Button" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Сохранить" Style="{StaticResource controlButton}" Click="Save_Button_Click"/>
+        <Button x:Name="Back_Button" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Назад" Style="{StaticResource controlButton}" Click="Back_Button_Click"/>
     </Grid>
 </Page>

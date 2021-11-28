@@ -36,7 +36,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Редактировать" Name="Edit_Button" Style="{StaticResource controlButton}" Margin="5,5" FontSize="16" MinWidth="150"/>
+                            <Button Content="Редактировать" Name="Edit_Button" Style="{StaticResource controlButton}" Margin="5,5" FontSize="16" MinWidth="150" Click="Edit_Button_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -44,6 +44,6 @@
         </DataGrid>
 
         <Button x:Name="Add_Button" Grid.Row="1" Grid.Column="0" Content="Добавить" Margin="10,10" Style="{StaticResource controlButton}" Click="Add_Button_Click"/>
-        <Button x:Name="Delete_Button" Grid.Row="1" Grid.Column="1" Content="Удалить" Margin="10,10" Style="{StaticResource controlButton}"/>
+        <Button x:Name="Delete_Button" Grid.Row="1" Grid.Column="1" Content="Удалить" Margin="10,10" Style="{StaticResource controlButton}" Click="Delete_Button_Click"/>
     </Grid>
 </Page>

@@ -40,5 +40,28 @@ namespace library.pages.books
         {
             Manager.MainFrame.Content = new Add_Edit_BooksPage(null);
         }
+
+        private void Edit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Content = new Add_Edit_BooksPage((sender as Button).DataContext as Book);
+        }
+
+        private void Delete_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var booksToRemove = DG.SelectedItems.Cast<Book>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {booksToRemove.Count()} элементов?", "Внимание!", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    libraryEntities.GetContext().Book.RemoveRange(booksToRemove);
+                    libraryEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
     }
 }

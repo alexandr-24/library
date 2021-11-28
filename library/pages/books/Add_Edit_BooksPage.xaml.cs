@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using library.classes;
+
 namespace library.pages.books
 {
     /// <summary>
@@ -31,6 +33,45 @@ namespace library.pages.books
                 _currentBook = selectedBook;
 
             DataContext = _currentBook;
+        }
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Content = new BooksPage();
+        }
+
+        private void Save_Button_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder errors = new StringBuilder();
+            if (_currentBook.Author == null)
+                errors.AppendLine("Выберете автора");
+            if (string.IsNullOrWhiteSpace(_currentBook.Name))
+                errors.AppendLine("Введите название книги");
+            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentBook.Year_of_publishing)))
+                errors.AppendLine("Введите год публикации");
+            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentBook.Number_of_pages)))
+                errors.AppendLine("Введите количество страниц");
+            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentBook.Publisher)))
+                errors.AppendLine("Введите издание");
+
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
+            if (_currentBook.ID_Book == 0)
+                libraryEntities.GetContext().Book.Add(_currentBook);
+
+            try
+            {
+                libraryEntities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена");
+                Manager.MainFrame.Content = new BooksPage();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }
