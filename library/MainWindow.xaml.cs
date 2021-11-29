@@ -17,6 +17,7 @@ using library.classes;
 using library.pages.home;
 using library.pages.authors;
 using library.pages.books;
+using library.pages.readers;
 
 namespace library
 {
@@ -61,6 +62,13 @@ namespace library
             Manager.MainFrame.Content = new BooksPage();
             setNotActiveButton();
             Book_Button.Style = (Style)Book_Button.FindResource("isActiveButton");
+        }
+
+        private void Reader_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Content = new ReadersPage();
+            setNotActiveButton();
+            Reader_Button.Style = (Style)Reader_Button.FindResource("isActiveButton");
         }
     }
 }
