@@ -46,6 +46,8 @@ namespace library.pages.authors
                     libraryEntities.GetContext().Author.RemoveRange(AuthorsToRemove);
                     libraryEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
+
+                    DG.ItemsSource = libraryEntities.GetContext().Author.ToList();
                 }
                 catch (Exception ex)
                 {

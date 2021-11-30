@@ -56,6 +56,8 @@ namespace library.pages.books
                     libraryEntities.GetContext().Book.RemoveRange(booksToRemove);
                     libraryEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
+
+                    DG.ItemsSource = libraryEntities.GetContext().Book.ToList();
                 }
                 catch (Exception ex)
                 {

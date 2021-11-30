@@ -43,6 +43,8 @@ namespace library.pages.readers
                     libraryEntities.GetContext().Reader.RemoveRange(ReadersToRemove);
                     libraryEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
+
+                    DG.ItemsSource = libraryEntities.GetContext().Reader.ToList();
                 }
                 catch (Exception ex)
                 {

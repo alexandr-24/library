@@ -56,6 +56,8 @@ namespace library.pages.subscriptions
                     libraryEntities.GetContext().Subscription.RemoveRange(subscriptionsToRemove);
                     libraryEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
+
+                    DG.ItemsSource = libraryEntities.GetContext().Subscription.ToList();
                 }
                 catch (Exception ex)
                 {

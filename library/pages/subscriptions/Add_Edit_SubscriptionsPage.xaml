@@ -32,7 +32,7 @@
         <TextBlock FontFamily="Comic Sans MS" FontSize="22" Text="Срок возврата:" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <TextBlock FontFamily="Comic Sans MS" FontSize="20" Text="Отметка о возврате:" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
-        <DatePicker x:Name="Date_TB" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" SelectedDate="{Binding Date_of_issue, StringFormat='dd.MM.yyyy'}"/>
+        <DatePicker x:Name="Date_DP" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" SelectedDate="{Binding Date_of_issue, StringFormat='dd.MM.yyyy'}"/>
         <ComboBox x:Name="Book_CB" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" SelectedItem="{Binding Book}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>

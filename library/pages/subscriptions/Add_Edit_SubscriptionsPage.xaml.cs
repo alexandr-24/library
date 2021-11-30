@@ -33,9 +33,15 @@ namespace library.pages.subscriptions
 
             if (selectedSubscription != null)
                 _currentSubscriprtion = selectedSubscription;
-            else add = true;
-
+            else
+            {
+                add = true;
+                _currentSubscriprtion.Date_of_issue = Convert.ToDateTime(System.DateTime.Now.ToString("dd.MM.yyyy"));
+            }
             DataContext = _currentSubscriprtion;
+
+            
+
         }
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
