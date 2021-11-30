@@ -111,6 +111,12 @@
     <Compile Include="pages\readers\ReadersPage.xaml.cs">
       <DependentUpon>ReadersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\subscriptions\Add_Edit_SubscriptionsPage.xaml.cs">
+      <DependentUpon>Add_Edit_SubscriptionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\subscriptions\SubscriptionsPage.xaml.cs">
+      <DependentUpon>SubscriptionsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reader.cs">
       <DependentUpon>LibraryModel.tt</DependentUpon>
     </Compile>
@@ -165,6 +171,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\readers\ReadersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\subscriptions\Add_Edit_SubscriptionsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\subscriptions\SubscriptionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

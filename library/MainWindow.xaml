@@ -25,7 +25,7 @@
         <Button x:Name="Author_Button" Content="Авторы" Grid.Row="1" Click="Author_Button_Click" Style="{StaticResource notActiveButton}"/>
         <Button x:Name="Book_Button" Content="Книги" Grid.Row="2" Style="{StaticResource notActiveButton}" Click="Book_Button_Click"/>
         <Button x:Name="Reader_Button" Content="Читатели" Grid.Row="3" Style="{StaticResource notActiveButton}" Click="Reader_Button_Click"/>
-        <Button x:Name="Subscription_Button" Content="Абонименты" Grid.Row="4" Style="{StaticResource notActiveButton}"/>
+        <Button x:Name="Subscription_Button" Content="Абонементы" Grid.Row="4" Style="{StaticResource notActiveButton}" Click="Subscription_Button_Click"/>
         <Button x:Name="Fine_Button" Content="Штрафы" Grid.Row="5" Style="{StaticResource notActiveButton}"/>
 
 

@@ -18,6 +18,7 @@ using library.pages.home;
 using library.pages.authors;
 using library.pages.books;
 using library.pages.readers;
+using library.pages.subscriptions;
 
 namespace library
 {
@@ -69,6 +70,13 @@ namespace library
             Manager.MainFrame.Content = new ReadersPage();
             setNotActiveButton();
             Reader_Button.Style = (Style)Reader_Button.FindResource("isActiveButton");
+        }
+
+        private void Subscription_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Content = new SubscriptionsPage();
+            setNotActiveButton();
+            Subscription_Button.Style = (Style)Subscription_Button.FindResource("isActiveButton");
         }
     }
 }
