@@ -32,7 +32,12 @@ namespace library.pages.subscriptions
             Reader_CB.ItemsSource = libraryEntities.GetContext().Reader.ToList();
 
             if (selectedSubscription != null)
+            {
                 _currentSubscriprtion = selectedSubscription;
+                Date_DP.IsEnabled = false;
+                Book_CB.IsEnabled = false;
+                Reader_CB.IsEnabled = false;
+            }
             else
             {
                 add = true;

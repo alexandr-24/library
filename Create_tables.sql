@@ -43,7 +43,7 @@ CREATE TABLE Fine(
 	FOREIGN KEY (Date_of_issue, ID_Book, ID_Reader) REFERENCES Subscription (Date_of_issue, ID_Book, ID_Reader),
 	PRIMARY KEY (ID_Book, ID_Reader, Date_of_issue),
 	[Return_date] DATE NULL,
-	[Status] NVARCHAR NULL,
+	[Status] NVARCHAR(50) NULL,
 	[Book_is_lost] BIT NOT NULL,
 	[Fine] DECIMAL(18,2) NOT NULL
 )

@@ -1,0 +1,28 @@
+﻿<Page x:Class="library.pages.fines.Select_Sub_FinesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:library.pages.fines"
+      mc:Ignorable="d" 
+      d:DesignHeight="469" d:DesignWidth="792"
+      Title="Select_Sub_FinesPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Просроченные абонименты" FontSize="24" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <DataGrid x:Name="DG" Grid.Row="1" Margin="10,10">
+            
+        </DataGrid>
+
+        <Button x:Name="Select_Button" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Выбрать" Style="{StaticResource controlButton}"/>
+        <Button x:Name="Back_Button" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Content="Назад" Style="{StaticResource controlButton}"/>
+    </Grid>
+</Page>

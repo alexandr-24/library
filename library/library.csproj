@@ -105,6 +105,12 @@
     <Compile Include="pages\books\BooksPage.xaml.cs">
       <DependentUpon>BooksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\fines\FinesPage.xaml.cs">
+      <DependentUpon>FinesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\fines\Select_Sub_FinesPage.xaml.cs">
+      <DependentUpon>Select_Sub_FinesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\readers\Add_Edit_ReadersPage.xaml.cs">
       <DependentUpon>Add_Edit_ReadersPage.xaml</DependentUpon>
     </Compile>
@@ -159,6 +165,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\books\BooksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\fines\FinesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\fines\Select_Sub_FinesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,9 +255,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="pages\fines\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

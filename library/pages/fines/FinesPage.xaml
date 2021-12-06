@@ -1,0 +1,58 @@
+﻿<Page x:Class="library.pages.fines.FinesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:library.pages.fines"
+      mc:Ignorable="d" 
+      d:DesignHeight="469" d:DesignWidth="792"
+      Title="FinesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="DG" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,10" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Книга" FontSize="16" FontFamily="Comic Sans MS" Width="*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} ({1})">
+                            <Binding Path="Subscription.Book.Name"/>
+                            <Binding Path="Subscription.Book.Author.Surname"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Читатель" FontSize="16" FontFamily="Comic Sans MS" Width="*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                            <Binding Path="Subscription.Reader.Surname"/>
+                            <Binding Path="Subscription.Reader.Name"/>
+                            <Binding Path="Subscription.Reader.Middle_name"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Дата выдачи" Binding="{Binding Date_of_issue, StringFormat='dd.MM.yyyy'}" FontSize="16" FontFamily="Comic Sans MS"/>
+                <DataGridTextColumn Header="Дата возврата" Binding="{Binding Return_date}" FontSize="16" FontFamily="Comic Sans MS" Width="*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" FontSize="16" FontFamily="Comic Sans MS" Width="*"/>
+                <DataGridCheckBoxColumn Header="Книга потеряна" Binding="{Binding Book_is_lost}"/>
+                <DataGridTextColumn Header="Штраф" Binding="{Binding Fine1}" FontSize="16" FontFamily="Comic Sans MS" Width="*"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Name="Edit_Button" Style="{StaticResource controlButton}" Margin="5,5" FontSize="16" MinWidth="150"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="Add_Button" Grid.Row="1" Grid.Column="0" Content="Добавить" Margin="10,10" Style="{StaticResource controlButton}" Click="Add_Button_Click"/>
+        <Button x:Name="Delete_Button" Grid.Row="1" Grid.Column="1" Content="Удалить" Margin="10,10" Style="{StaticResource controlButton}"/>
+    </Grid>
+</Page>
